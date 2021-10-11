@@ -14,8 +14,8 @@
 		breakpoints({
 			xlarge:  [ '1281px',  '1680px' ],
 			large:   [ '981px',   '1280px' ],
-			medium:  [ '601px',   '980px'  ],
-			small:   [ null,      '600px'  ]
+			medium:  [ '501px',   '980px'  ],
+			small:   [ null,      '500px'  ]
 		});
 
 	// Play initial animations on page load.
