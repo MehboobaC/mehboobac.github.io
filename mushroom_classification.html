@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mushroom Classification</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					
+					<li><a href="index.html#portfolio">View other projects</a></li>
+                    <li><a href="#Introduction">Abstract</a></li>
+					<li><a href="#data">Data</a></li>
+                    <li><a href="#technical">Technical Aspect</a></li>
+					<li><a href="#demo">Demo</a></li>
+					<li><a href="https://github.com/MehboobaC/Mushroom-Classification-Web-Deployment/blob/main/Team%205.ipynb"><span class="icon far fa-file-alt"></span></a></li>
+					<li><a href="https://github.com/MehboobaC/Mushroom-Classification-Web-Deployment/tree/main/WEB"><span class="icon far fa-folder-open"></span></a></li>
+				</ul>
+			</nav>
+        
+            
+		<!-- Introduction-->
+			
+        <article id="Introduction" class="wrapper style1">
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-12-medium">
+						<span class="image img"><img src="images/mushroom/card.png" alt="" /></span>
+					</div>
+					<div class="col-8 col-12-medium">
+						<header>
+							<h2>Mushroom Classification</h2><hr>
+							
+						</header>
+					</div>
+					<div class="col-12 col-12-medium">
+						<section class="box style2">
+							<p style="text-align: left; text-justify: inter-word; "><strong>
+							Mushroom classification is a famous ML project because of its categorical features.
+							 The aim of this project is to create an end to and ML model with database integration to store user inputs.
+							</strong></p>
+						</section>
+						<a href="#data" class="button large scrolly">The Data</a>
+						<a href="#demo" class="button large scrolly" style="margin-left: 75px;">Demo</a>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+        
+			
+		<!-- Data Explanation -->
+		<article id="data" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fa fa-database"></span>
+						<h3>DATA</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+								This dataset was originally contributed to the UCI Machine Learning repository nearly 30 years ago.
+								This dataset includes descriptions of hypothetical samples corresponding to 23 species of gilled mushrooms in the Agaricus and Lepiota Family Mushroom drawn from The Audubon Society Field Guide to North American Mushrooms (1981).
+								Each species is identified as definitely edible, definitely poisonous, or of unknown edibility and not recommended.
+								This latter class was combined with the poisonous one.
+							</h4>
+						</header>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-12-medium">
+						<section class="box style3">
+							<span class="image img"><img src="images\mushroom\data.jpg" alt="" /></span>
+						</section>
+					</div>	
+				</div>
+			</div>				
+		</article>
+		
+		<!-- Technical Aspect -->
+		<article id="technical" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fas fa-tools"></span>
+						<h3>Technical Aspect</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+							This is a simple flask app for classifying mushroom as edibile or poisonous.
+							
+							<br><br> Tools : Python( Flask, Numpy, Pandas,), HTML, CSS, MySQL
+
+							<br><br>The project is divided into three parts. <hr>
+
+							<ol>
+								<li> Exploring the data to find insights.</li>
+									<ul style="font-size: 14px;">
+										<li>Dataset have ~8000 rows and 23 columns(all are categorical features)</li>
+										<li>Odor is strongly indicative of what mushrooms are (edible/poisonous). 
+											Here edible and poisonous mushrooms have largely distinct smells.
+											Edible mushrooms can have almond, anise, or no odor while any other smell indicates poisonous mushrooms.
+											None odor mushrooms can be either edible or poisonous.
+											Based on bruises, we cant distinguish mushrooms easily.
+											Only edible mushrooms have abundant or numerous population.
+											Most of the mushrooms with population several is poisonous.
+											Only edible musrooms have waste type habitat. For any other habitat types mushrooms can be either edible or poisonous.</li>
+										<li>Most of the mushrooms in the dataset are free of gill attachement.
+											Based on gill size, mushrooms are mainly under the broad category.
+											We cant classify the mushrooms based on gill attachment, gill size or gill spacing.
+											Only poisonous mushrooms have buff or green gill color.
+											Only edible mushrooms have red or orange gill color.</li>
+										<li>Only poisonous mushrooms do not have rings.
+											Only edible mushrooms have flaring ring type and only poisonous mushrooms have none ring type.
+											Only edible mushrooms have brown veil color and only poisonous mushrooms have yellow veil color.
+											With in the dataset, only partial veil type mushrooms are there.</li>
+										<li>Most common stalk surface type in mushrooom is smooth.
+											Commonly mushrooms have stalk color above and below ring as white.
+											All white color mushrooms are not edible. We cant eat mushroom if its color is simply white.
+											Only edible mushrooms have stalk color above ring as gray, red, or orange.
+											Only Poisonous mushrooms have stalk color above ring as buff, cinnamon or yellow.
+											Stalk color below ring is grey,red or orange for only edible mushrooms where as buff for only poisonous mushrooms.</li>
+										<li>Based on stalk shape, we cant distinguish mushrooms easily. 
+											Only edible mushrooms have rooted stalk root.
+											 If stalk root is bulbous, there is equal chance that mushrooms can be edible or poisonous.</li>
+										<li>Only edible mushrooms have green or purple cap-color.
+											Only poisonous mushrooms have grooves as cap-surface.
+											Only poisonous mushrooms have conical cap shape and only edible mushrooms have sunken cap shape.
+											Only edible mushrooms have buff, orange, purple or yellow spore print color and only poisonous mushrooms have green spore print color.</li>
+										
+									</ul><hr>
+								<li> Training classification model</li>
+									<ul style="font-size: 14px;">
+										<li>Encoded categorical features</li>
+										<li>Applied ML models: Logistic Regression, Decision Tree Classifier, KNN Classifier, 
+											SVM, Random Forest Classifier, Gradient Boosting Classifier, Exterme Gradient Boosting, 
+											Naive Bayes Classifier</li>
+										<li>Most of the models were overfitting the data. Therefore, applied chi-square test to 
+											find important features in the data.
+										</li>
+										<li>The best model was  SVM linear with an accuracy of 0.913</li>
+									</ul><hr>
+								<li> Building a Flask web app for end user.</li>
+									<ul style="font-size: 14px;">
+										<li>Saved best model as pickle file and developed web app using Flask</li>
+										<li>Created database and table as per the data requirements</li>
+										<li>Integrated web page with MySQL to store user inputs for prediction</li>
+
+									</ul>
+							</ol>
+							</h4>
+						</header>
+					</div>
+				</div>
+				<article id="demo">
+				<div class="row">
+					<div class="col-12 col-12-medium">
+						<section class="box style3">
+							<h3>Demo</h3><br>
+							<span class="image img">
+								<video width="900" height="580" controls>
+								<source src="images\mushroom\demo.mp4" type="video/mp4">
+								</video>
+							</span>
+						</section>
+					</div>	
+				</div>/<article>
+			</div><br>
+			<a href="index.html#portfolio" class="button large scrolly">View other projects</a>
+			<a href="#Introduction" class="button large scrolly" style="margin-left: 75px;">Bact to top</a>				
+		</article>
+		
+						
+		
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

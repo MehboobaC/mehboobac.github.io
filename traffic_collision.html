@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Traffic Collision Prediction</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					
+					<li><a href="index.html#portfolio">View other projects</a></li>
+                    <li><a href="#Introduction">Abstract</a></li>
+					<li><a href="#data">Data</a></li>
+                    <li><a href="#technical">Technical Aspect</a></li>
+					<!--<li><a href="#eda">EDA</a></li>-->
+					<li><a href="#demo">Demo</a></li>
+					<li><a href="#todo">To Do</a></li>
+					<li><a href="https://github.com/MehboobaC/LA-Traffic-Collision-Analysis/blob/main/TEAM_5.ipynb"><span class="icon far fa-file-alt"></span></a></li>
+					<li><a href="https://github.com/MehboobaC/LA-Traffic-Collision-Analysis/tree/main/WEB"><span class="icon far fa-folder-open"></span></a></li>
+
+				</ul>
+			</nav>
+        
+            
+		<!-- Introduction-->
+			
+        <article id="Introduction" class="wrapper style1">
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-12-medium">
+						<span class="image img"><img src="images/LA/pic 1b.png" alt="" /></span>
+					</div>
+					<div class="col-8 col-12-medium">
+						<header>
+							<h2>Time series analysis on LA traffic collision data</h2><hr>
+							
+						</header>
+					</div>
+					<div class="col-12 col-12-medium">
+						<section class="box style2">
+							<p style="text-align: left; text-justify: inter-word; "><strong>
+							One of the leading causes of injuries and fatalities globally is traffic accidents.
+							Consequently, they make up a substantial area of research.
+							A number of factors increase the likelihood of crashes including weather, road design, vehicle design, alcohol use and aggressive driving.
+							In addition to these considerations, there can be some underlying patterns in the time of collision.
+							A time series analysis can be used to uncover this underlying pattern. 
+							The purpose of this project is to predict the number of collisions using the time series analysis.
+							</strong></p>
+						</section>
+						<a href="#data" class="button large scrolly">The Data</a>
+						<a href="#demo" class="button large scrolly" style="margin-left: 75px;">Demo</a>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+        
+			
+		<!-- Data Explanation -->
+		<article id="data" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fa fa-database"></span>
+						<h3>DATA</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">The dataset is taken from the open data portal city of Los Angeles.
+								<a href="https://data.lacity.org/Public-Safety/Traffic-Collision-Data-from-2010-to-Present/d5tf-ez2w" style="text-decoration: underline;">This data set </a>
+								and a bunch of others) is actively maintained by the city of Los Angeles and is freely available to the public. 
+								The dataset reflects traffic collision incidents in the City of Los Angeles dating back to 2010.
+								This  is transcribed from original paper traffic reports, so it’s very likely that there are errors.
+								The data begins in January 2010 and is updated weekly. In this particular project, we used data from January 2010 to January 2021,
+								which ends up being ~551K rows and 18 columns. Each row corresponds to a collision.</h4>
+						</header>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-12-medium">
+						<section class="box style3">
+							<span class="image img"><img src="images/LA/la_data.png" alt="" /></span>
+						</section>
+					</div>	
+				</div>
+			</div>				
+		</article>
+		
+		<!-- Technical Aspect -->
+		<article id="technical" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fas fa-tools"></span>
+						<h3>Technical Aspect</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+							This is a simple Flask app for monthly traffic collision prediction based on univariate time series analysis.
+							The trained model(web/model.pkl) takes date as input and predict the no.of collisions per month. 
+							<br> Tools : Python( Flask, Numpy, Pandas,), HTML, CSS, Power BI
+							<br><br>The project is divided into three parts. <hr>
+
+							<ol>
+								<li> Exploring the data to find insights.</li>
+									<ul style="font-size: 14px;">
+										<li>Dataset have ~551K rows and 18 columns</li>
+										<li>"DR Number" was unique for each row</li>
+										<li>"Time Occured" column was dirty and it had value from 1 to 2359. This column was cleaned to merge with "Date occured" column</li>
+										<li>Cleaned victim sex and victim descent columns to replace wrong entries</li>
+										<li>Extracted Area ID corresponding to different areas in "area name" column</li>
+										<li>Extracted premise code for each premise discription</li>
+										<li>Crime code and crime code had only 1 unique value indicating traffic collision</li>
+										<li>Location column had 740 entries with value (0.0, 0.0)</li>
+										<li>MO Code contains different codes in single cell seperated by space. Since MO Code is used to describe the traffic collision details, these codes were extracted to find the collision details.</li>
+									
+									</ul><hr>
+								<li> Exploratory Data Analysis</li>
+									<ul style="font-size: 14px;">
+										<li>Age column data is skewed towards the right. There are hardly any victims below age 15.Most victims are in their 20s.
+											The number of collision victims per age generally decreases after age 30.
+											There are spikes at most multiples of 5 (25, 30, 35, etc).
+											This suggests that some ages are estimated and that official identification (such as a driver’s license) isn’t always used in collision reports.Age 99 seems to be a catch-all bucket.
+											It seems unlikely that there are actually as many age-99 victims as are shown above. This plot also raises questions, how are collisions with multiple victims dealt with and what’s going on with the spike at age 99. </li>
+										<li>From the area-collision count plot, it is clear that 77th street has most no. of collisions and Foothill area have least no. of collisions.
+											 Southwest area also have more no.of collisions. Some areas obviously have more collisions than others.
+											 But without additional information such as size or traffic density per area, this graphic isn’t too informative.</li>
+										<li>Most no. of victims are from H(Hispanic/Latin/Mexican). The white people are also more in the no. of victims.
+											There are only a few victims of Japanese, Chinese, Vietnamese, Asian Indian, American Indian/Alaskan Native,
+											Cambodian, Pacific Islander, Guamanian, Laotian, Samoan and Hawaiian.
+											There are also a significant no. of victims from unknown descent.</li>
+										<li>The no. of collisions are approximately the same from 2010 to 2014.
+											There  is a significant increase in the no. of collisions from 2014 to 2019.
+											The sudden increase in collision count can be either due to the proper implementation of traffic collision data collision or due to the sudden increase in traffic during these years.
+											In 2020, there is a significant decrease in the no.of collisions, may be due to  the decrease in traffic due to corona pandemic.
+											2021 has lesser collisions as data has values up to date 9th January 2021.
+										</li>
+										<li>Most no. of collisions occurred during March and October and
+											 Least no.of collisions are there in February and April</li>
+										<li>Collisions are increasing from Sunday to Friday, with a sharp increase from Thursday to Friday and at their weekly minimum on Sunday and maximum on Friday.
+											 This indicates a presence of weekly seasonality in the data. By analysing the data for Friday on hourly collisions, we can find the peak hour in friday.
+											  There may be many reasons for the increase in collisions on Friday.
+											 This can be identified by analysing other social factors and can be used to implement counter measures to reduce the no.of collisions.</li>
+										<li> 58.15% collision victims are males and 37.54% are females. There is also 4.31% unknown sex victims. </li>
+										<li>collisions are sharply increasing from ~4am to ~8am, decreasing from ~8am to ~9am, generally increasing from ~9am to ~5pm and sharply decreasing from ~5pm to ~4am.
+											 No. of collisions have their daily minimum at ~4am and daily maximum at ~5pm.</li>
+										<li>By analysing the premise column, it is clear that most of the collisions occurred in the street.
+											 Proper measures needs to be taken in order to reduce the no.of collision in street.
+											  There is no availability in the data regarding pedestrians were involved or not. This needs further attention. Also parking lot has second most no.of reported collisions.
+											 Collisions in parking lot can be generally minor as it may occurred during parking. </li>
+										<li>In 2018, peoples with 18 years old caused more no.of collisions and in 2019, peoples with 19 years old caused more no.of collisions.
+											 Therefore, this age group requires further attention and they must be analysed accordingly.
+											 Proper awareness programme or policies must be taken in to action for this age group. </li>
+										<li>People with in the age 15 to 20 and 99 years is mainly denoted as unknown sex.</li>
+									</ul><hr>
+								<li> Training a univariate time series model for monthly traffic collision prediction.</li>
+									<ul style="font-size: 14px;">
+										<li> A dataframe is created from the traffic collision data with date as index as monthly collision as feature </li>
+										<li> From the descriptive statistics of the target column, it is clear the minimum no.of collisions in a month was 2429 and maximum no.of collisions was 5285. The average no.of collisions in a month is 4170. The data set for building the model contains 132 months data.</li>
+										<li> The no.of collisions between 2010 and 2014 is almost linear. There is a significant increase in the no. of collisions from 2014 to 2019. In 2020, there is a fall in the no. of collisions, which may be due to the corona pandemic.</li>
+										<li> Here the trend of the target column varies over time. Therefore, multiplicative modelling is used for decomposition to understand time series components seperately</li>
+										<li> Plotted autocorrelation(ACF) and partial autocorrelation(PACF) and checked for stationarity of time series data using Dickey Fuller Test.</li>
+										<li> Used log transformation to stabilize the variance of the series. Removed linear trend using first differencing method and seasonality using seasonal differencing.</li>
+										<li> Applied ARIMA and FB prophet models for prediction. FB prophet model resulted in rmse value less than 1000 whereas ARIMA model got rmse value of ~1006.</li>
+									</ul><hr>
+								<li> Building a Flask web app for end user.</li>
+									<ul style="font-size: 14px;">
+										<li> Used model.pkl file to predict the count of monthly collisions</li>
+									</ul>
+							</ol>
+							</h4>
+						</header>
+					</div>
+				</div>
+				<article id="demo">
+				<div class="row">
+					<div class="col-12 col-12-medium">
+						<section class="box style3">
+							<h3>Demo</h3><br>
+							<span class="image img">
+								<video width="900" height="580" controls>
+								<source src="images\LA\demo.mp4" type="video/mp4">
+								</video>
+							</span>
+						</section>
+					</div>	
+				</div>
+				</article>
+			</div>				
+		</article>
+		
+		<!-- EDA Explanation 
+		<article id="eda" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fa fa-chart-line"></span>
+						<h3>EDA</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+							Key Findings:
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							
+							
+
+							</h4>
+						</header>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-12-medium">
+						<section class="box style3">
+							image and steps
+							<span class="image img"><img src="images/la_data.png" alt="" /></span>
+						</section>
+					</div>	
+				</div>
+			</div>				
+		</article>-->
+		
+		<!-- todo -->
+		<article id="todo" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fas fa-mug-hot"></span>
+						<h3>To Do</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+							Future Works(Ongoing): <br>
+							<li> Prediction model for daily and hourly traffic collision count.</li>
+							<li> Weather data collection for multivariate time series analysis. </li>
+							<li> Prediction model by considering spatial data.</li>
+							<li> Output prediction model result as a map of LA city with warnings.</li>
+
+							</h4>
+						</header>
+					</div>
+				</div>
+			</div>
+			<a href="index.html#portfolio" class="button large scrolly">View other projects</a>
+			<a href="#Introduction" class="button large scrolly" style="margin-left: 75px;">Bact to top</a>				
+		</article>
+		
+		</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

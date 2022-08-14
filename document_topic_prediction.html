@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Document Topic Prediction</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					
+					<li><a href="index.html#portfolio">View other projects</a></li>
+                    <li><a href="#Introduction">Abstract</a></li>
+					<li><a href="#data">Data</a></li>
+                    <li><a href="#technical">Technical Aspect</a></li>
+					<li><a href="#eda">EDA</a></li>
+					<li><a href="#demo">Demo</a></li>
+					<li><a href="#todo">To Do</a></li>
+					<li><a href="https://github.com/MehboobaC/Document-Topic-Prediction/blob/main/32.%20Document_Topic_Prediction_Models.ipynb"><span class="icon far fa-file-alt"></span></a></li>
+					<li><a href="https://github.com/MehboobaC/Document-Topic-Prediction/tree/main/Flask_app"><span class="icon far fa-folder-open"></span></a></li>
+
+				</ul>
+			</nav>
+        
+            
+		<!-- Introduction-->
+			
+        <article id="Introduction" class="wrapper style1">
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-12-medium">
+						<span class="image img"><img src="images\topic\card.png" alt="" /></span>
+					</div>
+					<div class="col-8 col-12-medium">
+						<header>
+							<h2>Document Topic Prediction</h2><hr>
+							
+						</header>
+					</div>
+					<div class="col-12 col-12-medium">
+						<section class="box style2">
+							<p style="text-align: left; text-justify: inter-word; "><strong>
+								There are numerous sources on the Internet that generate massive amounts of daily news.
+								 Furthermore, as the user demand for information grows, it is critical that news be classified in order for users to access relevant information quickly and effectively.
+								  As a result, the machine learning model for automated news classification could be used to identify topics of untracked news and/or make personalised recommendations based on the user's prior interests.
+								  The goal of this project is to create models that take as input a news content and output the corresponding news topic.
+							</strong></p>
+						</section>
+						<a href="#data" class="button large scrolly">The Data</a>
+						<a href="#demo" class="button large scrolly" style="margin-left: 75px;">Demo</a>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+        
+			
+		<!-- Data Explanation -->
+		<article id="data" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fa fa-database"></span>
+						<h3>DATA</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+								The dataset consist of 2225 raw text documents from the BBC news website corresponding to stories in five topical areas(business, entertainment, politics, sport, tech) during 2004-2005.
+								
+							</h4>
+						</header>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-12-medium">
+						<section class="box style3">
+							<span class="image img"><img src="images\topic\data.jpg" alt="" /></span>
+						</section>
+					</div>	
+				</div>
+			</div>				
+		</article>
+		
+		<!-- Technical Aspect -->
+		<article id="technical" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fas fa-tools"></span>
+						<h3>Technical Aspect</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+							This is a simple Flask app for news topic prediction based on NLP and machine learning.
+							The trained model(web/model.pkl) takes text as input and predict the news topic. <br>
+							<br> Tools : Python( Flask, Numpy, Pandas, NLTK)
+							<br><br>The project is impimented in the following steps. <hr>
+
+							<ol>
+								<li> Data Preparation</li>
+									<ul style="font-size: 14px;">
+										<li>Combined data from multiple .txt files into csv file with 3 columns(topic, title and content)</li>
+									</ul>
+								<li> Data Preprocessing</li>
+									<ul style="font-size: 14px;">
+										<li>
+										The textual data(document content) was preprocessed by removing unnecessary characters and stopwords.
+										After lemmatization, bag of words model was used for vectorizing the textual data.
+										 The vectorizer was saved as pickle file for the implementation in flask.</li>
+									</ul>
+								<li> Model Building</li>
+									<ul style="font-size: 14px;">
+										<li>Divided the feature extracted dataset into two parts train and test set.</li>
+										<li>Trained 3 models( Multinomial NB, SVM and Decision Tree) for making prediction. 
+											The best model obtained was Multinomial NB (best accuracy and least no.of miss classifications) and created a pickle file of the model</li>
+										
+									</ul>
+								<li> Building a Flask web app for end user.</li>
+									<ul style="font-size: 14px;">
+										<li> Used model.pkl file to predict the news topic</li>
+									</ul>
+							</ol>
+							</h4>
+						</header>
+					</div>
+				</div>
+				<article id="demo">
+				<div class="row">
+					<div class="col-12 col-12-medium">
+						<section class="box style3">
+							<h3>Demo</h3><br>
+							<span class="image img">
+								<video width="900" height="580" controls>
+								<source src="images\topic\demo.mp4" type="video/mp4">
+								</video>
+							</span>
+						</section>
+					</div>	
+				</div>
+				</article>
+			</div><br>
+			
+							
+		</article>
+		
+		<!-- EDA Explanation 
+		<article id="eda" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fa fa-chart-line"></span>
+						<h3>EDA</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+							Key Findings:
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							
+							
+
+							</h4>
+						</header>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-12-medium">
+						<section class="box style3">
+							image and steps
+							<span class="image img"><img src="images/la_data.png" alt="" /></span>
+						</section>
+					</div>	
+				</div>
+			</div>				
+		</article>-->
+		
+		<!-- todo -->
+		<article id="todo" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fas fa-mug-hot"></span>
+						<h3>To Do</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+							Future Works: <br>
+							<li> Deep learning model for document topic prediction</li>
+							<li> EDA on textual data</li>
+							
+
+							</h4>
+						</header>
+					</div>
+				</div>
+			</div>
+			<a href="index.html#portfolio" class="button large scrolly">View other projects</a>
+			<a href="#Introduction" class="button large scrolly" style="margin-left: 75px;">Bact to top</a>	
+		</article>
+		
+		</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

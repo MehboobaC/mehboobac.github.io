@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Black Friday Sales Prediction</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					
+					<li><a href="index.html#portfolio">View other projects</a></li>
+                    <li><a href="#Introduction">Abstract</a></li>
+					<li><a href="#data">Data</a></li>
+                    <li><a href="#technical">Technical Aspect</a></li>
+					<!--<li><a href="#eda">EDA</a></li>-->
+					<li><a href="#todo">To Do</a></li>
+					<li><a href="https://github.com/MehboobaC/Black-Friday-Sales-Analysis/blob/main/Research.ipynb"><span class="icon far fa-file-alt"></span></a></li>
+				</ul>
+			</nav>
+        
+            
+		<!-- Introduction-->
+			
+        <article id="Introduction" class="wrapper style1">
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-12-medium">
+						<span class="image img"><img src="images\blackfriday\card.jpg" alt="" /></span>
+					</div>
+					<div class="col-8 col-12-medium">
+						<header>
+							<h2>Black Friday Sales Analysis and Prediction</h2><hr>
+							
+						</header>
+					</div>
+					<div class="col-12 col-12-medium">
+						<section class="box style2">
+							<p style="text-align: left; text-justify: inter-word; "><strong>
+								Black Friday is an informal name for the Friday following Thanksgiving Day in the United States, which is celebrated on the fourth Thursday of November.
+								Many stores offer highly promoted sales on Black Friday and open very early, such as at midnight, or may even start their sales at some time on Thanksgiving.
+								The major challenge for a Retail store or eCommerce business is to choose product price such that they get maximum profit at the end of the sales.
+								The goal of this project is to predict purchase amount based on historical purchase patterns.
+							
+							</strong></p>
+						</section>
+						<a href="#data" class="button large scrolly">The Data</a>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+        
+			
+		<!-- Data Explanation -->
+		<article id="data" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fa fa-database"></span>
+						<h3>DATA</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+								TThe dataset is obtained from an online data analytics hackathon hosted by Analytics Vidhya.
+								Features include customer information, categories of products purchased, city demographics and purchase amount.
+								The data have a total of 12 columns, 550068 transaction rows, 5891 unique users, and 3631 unique products.
+								There are 7 numeric variables and 5 object variables.  
+							</h4>
+						</header>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-12-medium">
+						<section class="box style3">
+							<span class="image img"><img src="images\blackfriday\data.jpg" alt="" /></span>
+						</section>
+					</div>	
+				</div>
+			</div>				
+		</article>
+		
+		<!-- Technical Aspect -->
+		<article id="technical" class="wrapper style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-2 col-12-medium">
+						<span class="icon solid featured fas fa-tools"></span>
+						<h3>Technical Aspect</h3>
+					</div>
+
+					<div class="col-10 col-12-medium">
+						<header>
+							<h4 style="text-align: left; text-justify: inter-word; ">
+								This is a multiple or multivariate linear regression model which is used to predict the purchase amount a customer is expected to spend on Black Friday.
+								This is a supervised machine learning problem since we are using available target values to train the model.
+								Here we already know the target, how much a customer spend on a specific product. Hence the response is a continuous value.
+								The ideal outcome is to provide retailers with information on how much is the expected purchase amount. 
+						
+							<br> Tools : Python( Flask, Numpy, Pandas, Matplotlib, Seaborn)
+							
+							<br><br>The project is divided into the following sections . <hr>
+
+							<ol>
+								<li> Data Understanding.</li>
+									<ul style="font-size: 14px;">
+										<li>Dataset have ~550K rows and 12 columns</li>
+										<li>There are 7 numeric variables and 5 object variables.</li>
+										<li>All features were categorical variable and target was continuous variable.</li>
+										<li>The data includes transaction history of 5891 unique customers, and 3631 unique products.</li>
+										<li>Only "Product_Category_2" and "Product_Category_3" columns have missing values</li>										
+									</ul><hr>
+								<li> Exploratory Data Analysis</li>
+									<ul style="font-size: 14px;">
+										<li>There are almost 3 times more male customers than female customers.
+											Maybe male visitors are more likely to go out and buy something for their ladies when more deals are present.
+											The purchase amount contributed by male customers is 76%.</li>
+										<li>The highest number of customers belong to the age group between 26 and 35.
+											 Also more purchase amount is contributed by the same age group.
+											 Even though, the frequency of visit of 46-50 and 55+ age group is less, they contribute 20% and 18% of the total purchase amount.
+											 Based on these results, the retail store should sell most of the products that target people in their late twenties to early thirties.
+											To increase profits, the number of products targeting people around their thirties can be increased.</li>
+										<li>From the mean of purchase amount by different age group graph, it is clear that all age group have near mean values.
+											 From this it is clear that, the age group 46-50 and 55+ spend more in a single purchase.</li>
+										<li>The customers belonging to occupation category 4 are more frequent visitors and customers belonging to occupation category 20,12 and 10 spends more.
+											 The mean purchase of different occupation are in the range 8000 to 10000.</li>
+										<li>The three cities are almost equally represented in the retail store during Black Fridays.
+											 Maybe the store is somewhere between these three cities, is easily accessible and has good road connections from these cities.
+											Customers from C_category cities make up more than half of our black friday sales even though, most frequent customers are from B_type city.
+											On the contrary, we didn't get very many customers from A_type city and they spent the least in our store. This can be noted when making future marketing plans.</li>
+										<li>The frequent customers in the store are new residents (one year or less). That is store apperas to be popular among new residents. People who have been living in current city for longer spend a bit more than new comers.
+											 Since they chose to stay with the store, we do need to find out what kept them loyal so that better plans can be made to keep more customers instead of losing them over time.</li>
+										<li>There are more single people customers and they spend more than married people on Black Friday.</li>
+										<li>The most selling product category 1 is 5th and 3rd category with 40% contribution on the total purchase amount. The product category with highest purchase amount is 10th.
+											 Even though 5th & 8th category is selling more, its mean value is less.</li>
+									</ul><hr>
+								<li> Data Preprocessing</li>
+									<ul style="font-size: 14px;">
+										<li>Here the columns Product_Category_2 and Product_Category_3 have missing values.
+											The missing value percentages of these columns are above 20%.
+											 If we fill these values with test static, more than 70% data will be artificial.
+											Also, for every single product it is non-realistic to have a second and third product category.
+											Therefore, these columns can be removed.</li>
+										<li>Encoded categorical features using label encoding and one hot encoding.</li>
+										<li>Checked correlation with other features.
+											There were no multicollinear features.
+											Also there is no single feature that shows strong correlation with target column directly, so purchase depends on the ensemble of all features.</li>
+
+									</ul><hr>
+								<li> Modeling</li>
+									<ul style="font-size: 14px;">
+										<li>Splitted dataset into into random train and test subset of ratio 80:20</li>
+										<li>Implemented multiple supervised models such as Linear Regressor, Decision Tree Regressor, Random Forest Regressor.</li>
+										<li> Created baseline models, models after standard scaling, models after minmax scaling, models after clustering customer features, 
+											models after clustering & pca and modelling after customer clustering & product clustering.
+										</li>
+										<li> Best model was the random forest model obtained after customer clustering on the clean data.</li>
+									</ul>
+							</ol>
+							</h4>
+						</header>
+					</div>
+				</div>
+			
+			</div>				
+		
+
+			<a href="index.html#portfolio" class="button large scrolly">View other projects</a>
+			<a href="#Introduction" class="button large scrolly" style="margin-left: 75px;">Bact to top</a>
+		</article>
+		
+
+		
+							
+		
+		
+		</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
